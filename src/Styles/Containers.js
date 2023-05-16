@@ -1,57 +1,29 @@
-import * as Misc from './Misc'
+import * as Buttons from './Buttons'
 import * as Colors from './Colors'
+import * as Fonts from './Fonts'
+import * as Images from './Images'
+import * as Misc from './Misc'
+import * as Shadows from './Shadows'
+import * as Window from './Window'
 import { StyleSheet } from 'react-native'
-import { RFValue } from 'react-native-responsive-fontsize'
-export const black = ''
-export const blackItalic = ''
-export const extraBold = ''
-export const extraBoldItalic = ''
-export const bold = ''
-export const boldItalic = ''
-export const semiBold = ''
-export const semiBoldItalic = ''
-export const medium = ''
-export const mediumItalic = ''
-export const regular = ''
-export const regularItalic = ''
-export const light = ''
-export const lightItalic = ''
-export const extraLight = ''
-export const extraLightItalic = ''
-export const thin = ''
-export const thinItalic = ''
-const standardScreenHeight = 680
+
 const styles = StyleSheet.create({
-	h1: {
-		fontSize: RFValue(30, standardScreenHeight),
-		fontFamily: black,
-		...Misc.shadowRegular,
+	safeAreaView: {
+		width: '100%',
+		height: '100%',
 	},
-	h2: {
-		color: Colors.white,
-		fontSize: RFValue(23, standardScreenHeight),
-		fontFamily: extraBold,
-		...Misc.shadowLight,
+	content: {
+		width: '100%',
+		height: '100%',
+		padding: Misc.padding,
 	},
-	body: {
-		color: Colors.white,
-		marginTop: Misc.margin,
-		fontSize: RFValue(16, standardScreenHeight),
-		fontFamily: regular,
-	},
-	smBtn: {
-		color: Colors.black,
-		fontFamily: medium,
-		fontSize: RFValue(16, standardScreenHeight),
-	},
-	lgBtn: {
-		color: Colors.black,
-		fontFamily: semiBold,
-		fontSize: RFValue(16, standardScreenHeight),
+	appView: {
+		width: Window.width,
+		height: Window.height,
+		backgroundColor: Colors.background,
+		...centered,
 	},
 })
-export const h1 = styles.h1
-export const h2 = styles.h2
-export const body = styles.body
-export const smBtn = styles.smBtn
-export const lgBtn = styles.lgBtn
+export const safeAreaView = styles.safeAreaView
+export const content = styles.content
+export const appView = styles.appView
